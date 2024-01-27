@@ -12,5 +12,5 @@ FROM alpine:3.19
 LABEL maintainer="dvkunion@gamil.com"
 WORKDIR /app
 COPY --from=build /tmp/seamoon /app/seamoon
-EXPOSE 1080 8080 7777 9000
-ENTRYPOINT ["/app/seamoon"]
+EXPOSE 8089
+ENTRYPOINT ["/app/seamoon", "server", "-p", "8089", "-t", "grpc"]
